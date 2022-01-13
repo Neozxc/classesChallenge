@@ -1,0 +1,22 @@
+{
+  "name": "cybercar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neozxc/classesChallenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Neozxc/classesChallenge/issues"
+  },
+  "homepage": "https://github.com/Neozxc/classesChallenge#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
+}

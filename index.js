@@ -1,100 +1,71 @@
 class Animals {
-    // If we dont feed and give water gets angry and hungry/thirsty
-    // If we feed increase love and decrease anger
 
-    constructor(thirst, hunger) {
+    constructor(thirst, hunger, rest, play) {
         this.thirst = thirst;
         this.hunger = hunger;
+        this.rest = rest;
+        this.play = play;
     }
 
-    thirst = 0;
     hunger = 0;
+    thirst = 0;
+    rest = 0;
+    play = 0;
 };
 
 class Feed extends Animals {
-    constructor(hunger) {
-        super(hunger)
+    constructor(thirst, hunger, rest, play) {
+        super(thirst, hunger, rest, play)
     }
 
-    hunger = 0;
-    thirst = 0;
-
     feed() {
-        console.log("Horse got his food!");
         this.hunger++;
         this.thirst--;
     }
 };
 
-class Cat extends Animals {
-    constructor(hunger, thirst) {
-        super(hunger, thirst)
+class Water extends Animals {
+    constructor(thirst, hunger, rest, play) {
+        super(thirst, hunger, rest, play)
     }
 
-    hunger = 9;
-    thirst = 10;
-
-    feed() {
-        console.log("Fed cat!");
-        this.hunger++;
-        this.thirst--;
+    water() {
+        this.thirst++;
     }
 };
 
-class Bored extends Cat {
-    constructor(hunger, thirst, bored) {
-        super(hunger, thirst, bored)
+class Play extends Animals {
+    constructor(thirst, hunger, rest, play) {
+        super(thirst, hunger, rest, play)
     }
 
-    bored = 1;
-
-    play() {
-        this.bored++;
+    playable() {
+        this.play++;
     }
 };
 
-class Shark extends Animals {
-    constructor(hunger, thirst) {
-        super(hunger, thirst)
+class Rest extends Animals {
+    constructor(thirst, hunger, rest, play) {
+        super(thirst, hunger, rest, play)
     }
 
-    hunger = 2;
-    thirst = 8;
-
-    feed() {
-        console.log("Fed shark!");
-        this.hunger++;
-        this.thirst--;
-    }
-};
-
-class Bored2 extends Shark {
-    constructor(hunger, thirst, bored) {
-        super(hunger, thirst, bored)
-    }
-
-    bored = 1;
-
-    play() {
-        this.bored++;
+    restful() {
+        this.rest++;
     }
 };
 
 
+let feeder = new Feed(1, 1, 0, 0);
+let waterr = new Water(0, 1, 0, 0);
+let restt = new Rest(1, 1 ,1 ,1);
+let playa = new Play(0, 1, 1, 1);
 
-let boredPrint = new Bored(0,0,0);
-let sharkPrint = new Shark(7, 5);
-let catPrint = new Cat(10, 9);
+console.log(feeder)
 
-// For cat
-console.log(catPrint);
-console.log("Thank you for feeding me!");
-console.log(boredPrint);
-console.log("Im tired you dont play!");
 
-// For shark
-console.log(sharkPrint);
-console.log("Thank you for feeding me!");
-console.log(boredPrint);
-console.log("Im tired you dont play!");
-
+module.exports = {
+    feeder,
+    waterr,
+    restt,
+    playa,
+}
