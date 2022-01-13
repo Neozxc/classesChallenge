@@ -1,6 +1,6 @@
 let inquirer = require("inquirer");
 let { questions, questions2 } = require("./theQuestions");
-let feeder = require("./index");
+const {feeder, water, rest, play} = require("./index");
 
 
 const starter = async () => {
@@ -11,20 +11,21 @@ const starter = async () => {
 
 const whatToDo = async () => {
   let answers = await inquirer.prompt(questions2)
-  // console.log(answers)
+  console.log(answers)
 
-  if (answers == "Feed") {
-    console.log(feeder);
+  if (answers.choices == "Feed") {
+    console.log(feeder)
+    feeder++;
+  } else if (answers.choices === "Water") {
+    console.log(water);
+    water++;
+  } else if (answers.choices === "Rest") {
+    console.log(rest);
+    rest++;
+  } else if (answers.choices === "Play") {
+    console.log(play);
+    play++;
   }
-  // } else if (answers.choices === "Water") {
-  //   console.log(water);
-  // } else if (answers.choices === "Rest") {
-  //   console.log(rest);
-  // } else if (answers.choices === "Play") {
-  //   console.log(play);
-  // } else { 
-  //   console.log("Dog is tired!");
-  // };
 
   whatToDo();
 };
